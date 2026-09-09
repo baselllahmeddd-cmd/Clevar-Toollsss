@@ -1,0 +1,854 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clever Tools Factory | B2B Elite Industrial Solutions</title>
+
+    <!-- Google Fonts: Cairo & Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #090d16;
+            --bg-card: #131b2e;
+            --bg-card-hover: #1c2742;
+            --primary-gold: #f59e0b;
+            --primary-gold-dark: #d97706;
+            --gold-gradient: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #92400e 100%);
+            --gold-glow: rgba(245, 158, 11, 0.35);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(245, 158, 11, 0.25);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 10% 20%, rgba(245, 158, 11, 0.05) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(217, 119, 6, 0.05) 0%, transparent 40%);
+        }
+
+        /* Header & Nav */
+        header {
+            background: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(16px);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            padding: 6px 14px;
+            background: var(--gold-gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: 900;
+            box-shadow: 0 0 15px var(--gold-glow);
+            letter-spacing: 0.5px;
+        }
+
+            .logo-icon i {
+                font-size: 1.2rem;
+            }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.2rem;
+        }
+
+            .nav-links a {
+                color: var(--text-muted);
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 1rem;
+                transition: var(--transition);
+                position: relative;
+                padding: 5px 0;
+            }
+
+                .nav-links a::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 0%;
+                    height: 2px;
+                    background: var(--gold-gradient);
+                    transition: var(--transition);
+                }
+
+                .nav-links a:hover {
+                    color: var(--primary-gold);
+                }
+
+                    .nav-links a:hover::after {
+                        width: 100%;
+                    }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 2rem 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 600px;
+                height: 600px;
+                background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+                z-index: 0;
+                pointer-events: none;
+            }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid var(--border-color);
+            padding: 8px 18px;
+            border-radius: 30px;
+            color: var(--primary-gold);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.25;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+            .hero h1 span {
+                background: var(--gold-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: #000;
+            padding: 1rem 2.8rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.15rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 25px var(--gold-glow);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+            .btn-gold:hover {
+                transform: translateY(-4px) scale(1.02);
+                box-shadow: 0 15px 35px var(--gold-glow);
+            }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+            .btn-outline:hover {
+                background: rgba(245, 158, 11, 0.1);
+                border-color: var(--primary-gold);
+                color: var(--primary-gold);
+                transform: translateY(-4px);
+            }
+
+        /* Stats Counter Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: -30px auto 60px;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2.2rem 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+            .stat-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 3px;
+                background: var(--gold-gradient);
+            }
+
+            .stat-card:hover {
+                transform: translateY(-8px);
+                border-color: var(--primary-gold);
+            }
+
+            .stat-card h3 {
+                font-size: 3rem;
+                color: var(--primary-gold);
+                font-weight: 900;
+                line-height: 1;
+                margin-bottom: 0.5rem;
+            }
+
+            .stat-card p {
+                color: var(--text-muted);
+                font-weight: 700;
+                font-size: 1rem;
+            }
+
+        /* Section Global Styling */
+        .section {
+            padding: 90px 2rem;
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+            .section-title h2 {
+                font-size: 2.5rem;
+                font-weight: 900;
+                color: var(--text-main);
+                margin-bottom: 0.8rem;
+            }
+
+            .section-title p {
+                color: var(--text-muted);
+                font-size: 1.1rem;
+                max-width: 600px;
+                margin: 0 auto 1rem;
+            }
+
+            .section-title div {
+                width: 80px;
+                height: 4px;
+                background: var(--gold-gradient);
+                margin: 0 auto;
+                border-radius: 4px;
+            }
+
+        /* Products Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+            .card:hover {
+                transform: translateY(-10px);
+                border-color: var(--primary-gold);
+                background: var(--bg-card-hover);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            }
+
+        .card-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-icon {
+            background: var(--gold-gradient);
+            color: #000;
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 1.8rem;
+        }
+
+            .card-features li {
+                color: #cbd5e1;
+                font-size: 0.95rem;
+                margin-bottom: 8px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+                .card-features li i {
+                    color: var(--primary-gold);
+                    font-size: 0.8rem;
+                }
+
+        .card-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--primary-gold);
+            padding: 0.75rem 1.2rem;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-btn {
+            background: var(--gold-gradient);
+            color: #000;
+            border-color: transparent;
+        }
+
+        /* Interactive B2B Cost Estimator Tool */
+        .calculator-card {
+            background: linear-gradient(145deg, #131b2e 0%, #0d1322 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Form Section */
+        .contact-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 3.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 0.6rem;
+                color: var(--text-main);
+                font-weight: 700;
+                font-size: 1.05rem;
+            }
+
+        .form-control {
+            width: 100%;
+            padding: 1.1rem;
+            background: var(--bg-dark);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            color: var(--text-main);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+            .form-control:focus {
+                outline: none;
+                border-color: var(--primary-gold);
+                box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);
+            }
+
+        select.form-control option {
+            background: var(--bg-dark);
+            color: var(--text-main);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: #fff;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+            .whatsapp-float:hover {
+                transform: scale(1.15) rotate(10deg);
+            }
+
+        /* Footer */
+        footer {
+            background: #05080f;
+            padding: 4rem 2rem 2.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+        }
+
+            footer strong {
+                color: var(--primary-gold);
+                font-size: 1.1rem;
+            }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 850px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .contact-container {
+                padding: 2rem;
+            }
+
+            .calc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-wrench"></i>
+                    <span>Clever Tools</span>
+                </div>
+                <span class="logo-text">Clever Tools Factory</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">المنتجات</a></li>
+                <li><a href="#calculator">حاسبة الأسعار</a></li>
+                <li><a href="#quote">طلب سعر</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+       
+        <h1 data-aos="fade-up">حلول الهندسة والأثاث المعدني <span>للمصانع والشركات</span></h1>
+        <p data-aos="fade-up" data-aos-delay="100">نوفر أحدث أنظمة التخزين الشاقة، الأدراج الهيدروليكية، والدواليب الصاج المدهونة بالدهان الإلكتروستاتيك المكون من حماية مضادة للصدأ والخدش.</p>
+
+        <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
+            <a href="#quote" class="btn-gold">
+                طلب عرض سعر B2B <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <a href="#calculator" class="btn-outline">
+                احسب التكلفة التقديرية <i class="fa-solid fa-calculator"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Interactive Counter Stats -->
+    <div class="stats">
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+            <h3 class="counter" data-target="15">0</h3>
+            <p>سنة خبرة في التصنيع</p>
+        </div>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+            <h3 class="counter" data-target="500">0</h3>
+            <p>مشروع B2B تم تجهيزه</p>
+        </div>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+            <h3><span class="counter" data-target="100">0</span>%</h3>
+            <p>دهان إلكتروستاتيك مقاوم للصدأ</p>
+        </div>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+            <h3 class="counter" data-target="24">0</h3>
+            <p>ساعة متوسط سرعة الرد</p>
+        </div>
+    </div>
+
+    <!-- Products & Features Section -->
+    <section class="section" id="services">
+        <div class="section-title">
+            <h2>منتجاتنا والتجهيزات الصناعية</h2>
+            <p>مصنعة بأعلى درجات الصاج المدرفل على البارد مع معالجة حماية متكاملة</p>
+            <div></div>
+        </div>
+
+        <div class="grid">
+            <!-- Product 1 -->
+            <div class="card" data-aos="fade-up">
+                <div>
+                    <div class="card-icon"><i class="fa-solid fa-door-closed"></i></div>
+                    <h3>دواليب صاج وخزائن للعمال</h3>
+                    <p>دواليب معدنية عالية التحمل (1 إلى 12 عين) مجهزة بأقفال أمان وفتحات تهوية للمصانع والنوادي.</p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> سمك الصاج حسب المواصفات</li>
+                        <li><i class="fa-solid fa-check"></i> مفصلات متينة ضد الكسر</li>
+                        <li><i class="fa-solid fa-check"></i> ألوان متعددة حسـب الطلب</li>
+                    </ul>
+                </div>
+                <a href="#quote" class="card-btn">طلب تسعير المنتج</a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <div>
+                    <div class="card-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <h3>أنظمة أرفف المخازن (Heavy Duty)</h3>
+                    <p>أرفف صلبة وحوامل ثقيلة تتحمل الأوزان العالية لتنظيم مستودعات ومخازن الشحنات.</p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> تحمّل يصل إلى 500 كجم للرف</li>
+                        <li><i class="fa-solid fa-check"></i> سهولة التعديل والتركيب</li>
+                        <li><i class="fa-solid fa-check"></i> مقاومة للرطوبة والصدأ</li>
+                    </ul>
+                </div>
+                <a href="#quote" class="card-btn">طلب تسعير المنتج</a>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <div>
+                    <div class="card-icon"><i class="fa-solid fa-table-cells"></i></div>
+                    <h3>أدراج ومكاتب معدنية إدارية</h3>
+                    <p>طاولات عمل، أدراج حفظ مستندات، ومكاتب صاج للمهندسين والمؤسسات الكبرى.</p>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> مجاري هيدروليكية سلسة</li>
+                        <li><i class="fa-solid fa-check"></i> نظام قفل central lock</li>
+                        <li><i class="fa-solid fa-check"></i> أشكال مودرن وعصرية</li>
+                    </ul>
+                </div>
+                <a href="#quote" class="card-btn">طلب تسعير المنتج</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW FEATURE: Interactive Cost Calculator -->
+    <section class="section" id="calculator">
+        <div class="section-title">
+            <h2>حاسبة التكلفة التقديرية (B2B)</h2>
+            <p>احسب التكلفة التقديرية لشحنتك أو طلبك قبل التواصل معنا</p>
+            <div></div>
+        </div>
+
+        <div class="calculator-card" data-aos="zoom-in">
+            <div class="calc-grid">
+                <div>
+                    <div class="form-group">
+                        <label>نوع المنتج المطلوب:</label>
+                        <select id="calcProduct" class="form-control" onchange="calculatePrice()">
+                            <option value="1200">دواليب صاج عمال (متوسط 1200 ج.م/الوحدة)</option>
+                            <option value="850">أرفف تخزين صلبة (متوسط 850 ج.م/الرف)</option>
+                            <option value="2500">مكاتب وأدراج معدنية (متوسط 2500 ج.م/المكتب)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>الكمية المطلوبة (بالوحدة):</label>
+                        <input type="number" id="calcQty" class="form-control" value="10" min="1" oninput="calculatePrice()">
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; justify-content: center; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 16px; border: 1px solid var(--border-color); text-align: center;">
+                    <span style="color: var(--text-muted); font-weight: 700;">التكلفة الإجمالية التقديرية:</span>
+                    <h2 id="totalPrice" style="font-size: 2.8rem; color: var(--primary-gold); margin: 10px 0; font-weight: 900;">12,000 ج.م</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="section" id="quote">
+        <div class="section-title">
+            <h2>طلب عرض سعر رسمي</h2>
+            <p>تواصل معنا وسيقوم فريق المبيعات بالرد عليك خلال دقائق عبر الواتساب</p>
+            <div></div>
+        </div>
+
+        <div class="contact-container" data-aos="fade-up">
+            <form id="whatsappForm">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-building" style="color: var(--primary-gold);"></i> اسم الشركة / المؤسسة</label>
+                    <input type="text" id="company" class="form-control" placeholder="مثال: شركة الأمل للمقاولات" required>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-phone" style="color: var(--primary-gold);"></i> رقم التواصل (واتساب)</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="01xxxxxxxx" required>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-list-check" style="color: var(--primary-gold);"></i> المنتج المطلوب استفسار عنه</label>
+                    <select id="product" class="form-control" required>
+                        <option value="" disabled selected>اختر المنتج المطلوب...</option>
+                        <option value="دواليب صاج وخزائن عمال">دواليب صاج وخزائن عمال</option>
+                        <option value="أنظمة أرفف معدنية ومخازن">أنظمة أرفف معدنية ومخازن</option>
+                        <option value="أدراج ومكاتب معدنية إدارية">أدراج ومكاتب معدنية إدارية</option>
+                        <option value="تجهيزات معدنية مخصصة (حسب الطلب)">تجهيزات معدنية مخصصة (حسب الطلب)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-pen-to-square" style="color: var(--primary-gold);"></i> تفاصيل الكمية والمواصفات</label>
+                    <textarea id="message" class="form-control" placeholder="اكتب السمك المطلوب، الأبعاد، أو عدد العيون والكمية..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-gold" style="width: 100%; justify-content: center;">
+                    إرسال الطلب الآن <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/201211722422" class="whatsapp-float" target="_blank" title="تواصل معنا عبر واتساب">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 جميع الحقوق محفوظة لـ Clever Tools Factory.</p>
+        <p style="margin-top: 8px; font-size: 0.9rem;">Developed with Excellence by <strong>BaSeL</strong></p>
+    </footer>
+
+    <!-- Scripts: AOS Animation & Interactive Counters & Calculator -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS Animations
+        AOS.init({
+        duration: 900,
+        once: true,
+        easing: 'ease-out-cubic'
+        });
+
+        // Interactive Price Calculator
+        function calculatePrice() {
+        var unitPrice = parseFloat(document.getElementById('calcProduct').value);
+        var qty = parseInt(document.getElementById('calcQty').value) || 1;
+        var total = unitPrice * qty;
+
+        // Apply discount for big quantities
+        if (qty >= 50) {
+        total = total * 0.85; // 15% discount
+        } else if (qty >= 20) {
+        total = total * 0.90; // 10% discount
+        }
+
+        document.getElementById('totalPrice').innerText = total.toLocaleString('ar-EG') + " ج.م";
+        }
+
+        // Animated Counters
+        const counters = document.querySelectorAll('.counter');
+        let animated = false;
+
+        window.addEventListener('scroll', () => {
+        const scrollPos = window.scrollY + window.innerHeight;
+        const statsPos = document.querySelector('.stats').offsetTop;
+
+        if (scrollPos > statsPos && !animated) {
+        counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const speed = 200;
+        const updateCount = () => {
+        const count = +counter.innerText;
+        const inc = target / speed;
+        if (count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(updateCount, 20);
+        } else {
+        counter.innerText = target;
+        }
+        };
+        updateCount();
+        });
+        animated = true;
+        }
+        });
+
+        // Submit Form to WhatsApp
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var company = document.getElementById('company').value;
+        var phone = document.getElementById('phone').value;
+        var product = document.getElementById('product').value;
+        var message = document.getElementById('message').value;
+
+        var whatsappMessage = "السلام عليكم، طلب عرض سعر جديد (B2B):%0A%0A" +
+        "🏢 *اسم الشركة:* " + encodeURIComponent(company) + "%0A" +
+        "📞 *رقم التواصل:* " + encodeURIComponent(phone) + "%0A" +
+        "📦 *المنتج المطلوب:* " + encodeURIComponent(product) + "%0A" +
+        "📝 *التفاصيل والكمية:* " + encodeURIComponent(message);
+
+        window.open("https://wa.me/201211722422?text=" + whatsappMessage, '_blank');
+        });
+    </script>
+</body>
+</html>
